@@ -1,0 +1,12 @@
+{
+    "version": 2,
+    "builds": [
+      { "src": "vue-project", "use": "@vercel/static-build" },
+      { "src": "Db/server.js", "use": "@vercel/node" }
+    ],
+    "routes": [
+      { "src": "/api/(.*)", "dest": "Db/server.js" },
+      { "src": "/(.*)", "dest": "vue-project/$1" }
+    ]
+  }
+  
